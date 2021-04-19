@@ -33,7 +33,7 @@ export default class EditTodo extends Component {
         axios.get('http://localhost:4000/api/todos/' + this.props.match.params.id)
             .then((response) => {
                 this.setState({
-                    _id: response.data.id,
+                    _id: response.data._id,
                     type: response.data.type,
                     description: response.data.description,
                     date: response.data.due_date,
@@ -104,7 +104,7 @@ export default class EditTodo extends Component {
     render() {
         return (
             <div style={{ marginTop: 20 }}>
-                <h3>Create New Todo</h3>
+                <h3>Edit New Todo</h3>
 
                 {/* Form for user to input data */}
                 <form onSubmit={this.onSubmit}>
